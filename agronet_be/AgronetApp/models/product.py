@@ -10,4 +10,4 @@ class Product(models.Model):
     sales_unit=models.CharField(max_length=20)
     id_seller=models.ForeignKey(User,related_name='product',null=False,on_delete=models.CASCADE)
     amount=models.IntegerField()
-    image=models.BinaryField()
+    image=models.BinaryField(null=True)
