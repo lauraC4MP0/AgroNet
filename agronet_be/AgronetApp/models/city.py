@@ -1,7 +1,7 @@
 from django.db import models
-from .departament import Departamento
+from .departament import Departament
 
 class City(models.Model):
-id_ciudad = models.AutoField(primary_key=True)
-Departamento = models.ForeignKey(departament, related_name = 'Departamento', on_delete= models.CASCADE)
-nombre_ciudad = models.CharField('Ciudad', max_lenght = 15)
+id_city = models.AutoField(primary_key=True)
+Departament = models.ForeignKey(Departament, related_name = 'Departamento', on_delete= models.CASCADE)
+name_city = models.CharField('Ciudad', max_lenght = 15)
