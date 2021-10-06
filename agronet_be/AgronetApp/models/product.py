@@ -3,7 +3,7 @@ from django.db.models.fields import NullBooleanField
 from .user import User
 
 class Product(models.Model):
-    code=models.AutoField(primary_key=True)
+    id=models.AutoField(primary_key=True)
     name=models.CharField(max_length=30)
     description=models.CharField(max_length=80)
     price=models.IntegerField()
