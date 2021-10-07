@@ -3,17 +3,17 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 from django.contrib.auth.hashers import make_password
 
 class userManager(BaseUserManager):
-    def create_user(self, username, password=None):
-        if not username:
+    def create_user(self, usersname, password=None):
+        if not usersname:
             raise ValueError('El usuario no puede tener mas de un nombre de usuario')
-        user = self.model(username=username)
+        user = self.model(usersname=usersname)
         user.set_password(password)
         user.save(using=self.db)
         return user
 
-    def create_superuser(self, username, password):
+    def create_superuser(self, usersname, password):
         user = self.create_user(
-            username = username,
+            username = usersname,
             password = password,
         )
         user.is_admin = True
@@ -21,19 +21,19 @@ class userManager(BaseUserManager):
         return user
 
 class User(AbstractBaseUser, PermissionsMixin):
-    username = models.IntegerField('Num Doc de Identidad', unique=True, primary_key=True)
-    name = models.CharField('Nombres', max_length=30)
-    lastname = models.CharField('Apellidos', max_length=30)
+    usersname = models.IntegerField('Num Doc de Identidad', primary_key=True)
+    name_user = models.CharField('Nombres', max_length=30)
+    lastname_user = models.CharField('Apellidos', max_length=30)
     email = models.CharField('Correo electronico', max_length=100)
-    address = models.CharField('Direccion', max_length=50)
-    City = models.CharField('Ciudad', max_length=50)
-    Department = models.CharField('Departamento', max_length=50)
+    address_user = models.CharField('Direccion', max_length=50)
+    id_city = models.CharField('Ciudad', max_length=50)
+    id_department = models.CharField('Departamento', max_length=50)
     num_phone = models.IntegerField('Telefono')
     password = models.CharField('Contraseña', max_length=256)
     Type_sex = models.TextChoices('Femenino', 'Masculino')
     Type_rol = models.TextChoices('Comprador','Vendedor')
-    sex = models.CharField(choices=Type_sex.choices, max_length=10)
-    rol = models.CharField(blank=False, choices=Type_rol.choices, max_length=15)
+    sex_user = models.CharField(choices=Type_sex.choices, max_length=10)
+    rol_user = models.CharField(blank=False, choices=Type_rol.choices, max_length=15)
 
     def save(self, **kwargs):
         some_salt = 'jjHgkjashflkjGJHA'
@@ -41,4 +41,4 @@ class User(AbstractBaseUser, PermissionsMixin):
         super().save(**kwargs)
 
     objects = UserManager()
-    USERNAME_FIELD = 'username'
+    USERNAME_FIELD = 'usersname'
