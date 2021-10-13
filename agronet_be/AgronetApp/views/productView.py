@@ -9,6 +9,12 @@ from agroApp.models.user import User
 
 class ProductsView(views.APIView):
 
+    def get_user(self, usersname):
+        try:
+            return User.objects.get(pk=usersname)
+        except:
+            raise Http404
+
     def list(self,request,*args,**kwargs):
         products=Product.objects.all()
         serializer=ProductSerializer(products,many=True)
@@ -25,12 +31,7 @@ class ProductsView(views.APIView):
         return Response({"message":"Producto agregado exitosamente"},status=status.HTTP_201_CREATED)
     
 class especificProductView(views.APIView):
-    def get_user(self, usersname):
-        try:
-            return User.objects.get(pk=usersname)
-        except:
-            raise Http404
-
+    
     def search(self,id_product):
         try:
             return Product.objects.get(pk=id_product)
