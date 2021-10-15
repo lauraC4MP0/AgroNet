@@ -29,7 +29,7 @@ class ProductsView(views.APIView):
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)"""
         return Response({"message":"Producto agregado exitosamente"},status=status.HTTP_201_CREATED)
     
-class especificProductView(views.APIView):
+class specificProductView(views.APIView):
     
     def search(self,id_product):
         try:
