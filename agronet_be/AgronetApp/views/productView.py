@@ -2,10 +2,9 @@ from django.http.response import Http404
 from django.shortcuts import render, HttpResponse
 from rest_framework import status,views
 from rest_framework.response import Response
-from agroApp import serializers
-from agroApp.models import Product, product
-from agroApp.serializers import ProductSerializer
-from agroApp.models.user import User
+from AgronetApp.models import Product, product
+from AgronetApp.serializers import ProductSerializer
+from AgronetApp.models.user import User
 
 class ProductsView(views.APIView):
 
