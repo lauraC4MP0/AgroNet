@@ -8,6 +8,6 @@ from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshVie
 urlpatterns = [
     path('orderDetail', views.OrderDetailView.as_view()),
     path('order', views.OrdersView.as_view()),
-    path('product', views.ProductsView.as_view()),
-   
+    path('products/',views.ProductsView.as_view()),
+    path('product/<int:id_product>',views.especificProductView.as_view())
 ]
