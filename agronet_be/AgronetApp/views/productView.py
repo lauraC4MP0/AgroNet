@@ -2,7 +2,7 @@ from django.http.response import Http404
 from django.shortcuts import render, HttpResponse
 from rest_framework import status,views
 from rest_framework.response import Response
-from AgronetApp.models import Product, product
+from AgronetApp.models import Product
 from AgronetApp.serializers import ProductSerializer
 from AgronetApp.models.user import User
 
