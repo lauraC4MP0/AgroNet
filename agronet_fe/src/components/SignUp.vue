@@ -219,21 +219,3 @@ textarea{
   align-items: center;
 }
 </style>
-
-.signup button {
-  width: 100%;
-  height: 40px;
-  color: white;
-  background: seagreen;
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 10px 25px;
-  margin: 5px 0 25px 0;
-}
-
-.signup button:hover{
-    background: seagreen;
-    color:white;
-    border: 1px solid seagreen;
-}
-</style>
