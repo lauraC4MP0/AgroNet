@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from AgronetApp.models.city import City
 from AgronetApp.serializers import citySerializer
 
-class CityView(views):
+class CityViews(views.APIView):
 
     def post(self, request, *args, **kwargs):
         serializer = citySerializer(data=request.data)

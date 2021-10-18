@@ -6,3 +6,5 @@ from .orderView import specificOrderView
 from .userCreateView import UserCreateView
 from .userDetailView import UserDetailView
 from .userEditView import userEditView
+from .cityView import CityViews
+

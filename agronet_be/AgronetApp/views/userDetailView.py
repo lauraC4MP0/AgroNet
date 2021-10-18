@@ -5,11 +5,11 @@ from rest_framework_simplejwt.backends import TokenBackend
 from rest_framework.permissions import IsAuthenticated
 
 from AgronetApp.models.user import User
-from AgronetApp.serializers.userSerializer import userSerializer
+from AgronetApp.serializers.userSerializer import UserSerializer
 
 class UserDetailView(generics.RetrieveAPIView):
     queryset = User.objects.all()
-    serializer_class = userSerializer
+    serializer_class = UserSerializer
     permission_classes = (IsAuthenticated,)
 
     def get(self, request, *args, **kwargs):

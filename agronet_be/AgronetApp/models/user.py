@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager, UserManager
 from django.contrib.auth.hashers import make_password
+from AgronetApp.models.city import City
 
 class userManager(BaseUserManager):
     def create_user(self, usersname, password=None):
@@ -26,8 +27,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     lastname_user = models.CharField('Apellidos', max_length=30)
     email = models.CharField('Correo electronico', max_length=100)
     address_user = models.CharField('Direccion', max_length=50)
-    id_city = models.ForeignKey(city,related_name='ciudad',null=False,on_delete=models.CASCADE)
-    id_department = models.ForeignKey(Departament,related_name='departamento',null=False,on_delete=models.CASCADE)
+    id_city = models.ForeignKey(City,related_name='ciudad',null=False,on_delete=models.CASCADE)
     num_phone = models.IntegerField('Telefono')
     password = models.CharField('Contraseña', max_length=256)
     Type_sex = models.TextChoices('Femenino', 'Masculino')
