@@ -4,8 +4,8 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.backends import TokenBackend
 from rest_framework.permissions import IsAuthenticated
 
-from App.models.user import User
-from App.serializers.userSerializer import userSerializer
+from AgronetApp.models.user import User
+from AgronetApp.serializers.userSerializer import userSerializer
 
 class UserDetailView(generics.RetrieveAPIView):
     queryset = User.objects.all()
