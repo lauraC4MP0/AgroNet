@@ -2,9 +2,9 @@ from django.http.response import Http404, HttpResponseBadRequest
 from django.shortcuts import HttpResponse
 from rest_framework import status,views
 from rest_framework.response import Response
-from App import serializers
-from App.models import User
-from App.serializers import  userSerializer
+from AgronetApp import serializers
+from AgronetApp.models import User
+from AgronetApp.serializers import  userSerializer
 
 class userEditView(views.APIView):
 
