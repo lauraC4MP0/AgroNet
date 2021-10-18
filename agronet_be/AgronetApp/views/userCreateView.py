@@ -2,7 +2,7 @@ from rest_framework import status, views
 from rest_framework.response import Response
 from rest_framework_simplejwt.serializers import PasswordField, TokenObtainPairSerializer
 
-from App.serializers.userSerializer import UserSerializer
+from AgronetApp.serializers.userSerializer import UserSerializer
 
 class UserCreateView(views.APIView):
 
