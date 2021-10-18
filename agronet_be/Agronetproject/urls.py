@@ -9,11 +9,12 @@ urlpatterns = [
     path('refresh/', TokenRefreshView.as_view()),
     path('user/', views.UserCreateView.as_view()),
     path('user/<int:pk>/', views.UserDetailView.as_view()),
-    path('orderDetail', views.OrderDetailView.as_view()),
-    path('order', views.OrdersView.as_view()),
+    path('orderDetail/', views.OrderDetailView.as_view()),
+    path('order/', views.OrdersView.as_view()),
     path('products/',views.ProductsView.as_view()),
     path('product/<int:id_product>',views.specificProductView.as_view()),
     path('city/',views.CityViews.as_view()),
+    path('departament/',views.DepartamentView.as_view()),
 
     
 ]

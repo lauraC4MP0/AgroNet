@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\alejo\OneDrive\Documentos\Ciclo3\App-Ciclo3\agronet_be\env"
+VIRTUAL_ENV="C:\Users\alejo\OneDrive\Documentos\Ciclo3\AgroNet\agronet_be\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

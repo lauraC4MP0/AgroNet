@@ -1,4 +1,4 @@
-#!C:\Users\alejo\OneDrive\Documentos\Ciclo3\App-Ciclo3\agronet_be\env\Scripts\python.exe
+#!C:\Users\salom\OneDrive\Escritorio\Ciclo 3 - Mision TIC\Agronet_be\env\Scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

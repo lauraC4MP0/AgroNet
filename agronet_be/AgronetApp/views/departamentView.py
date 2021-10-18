@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from AgronetApp.models.departament import Departament
 from AgronetApp.serializers import departamentSerializer
 
-class DepartamentView(views):
+class DepartamentView(views.APIView):
 
     def post(self, request, *args, **kwargs):
         serializer = departamentSerializer(data=request.data)
