@@ -17,7 +17,7 @@ class OrdersView(views.APIView):
 
     def get_user(self, usersname):
         try:
-            return User.objects.get(pk=usersname)
+            return User.objects.get(username=request.user.username)
         except:
             raise Http404
 
