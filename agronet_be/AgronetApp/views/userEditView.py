@@ -3,18 +3,19 @@ from django.shortcuts import HttpResponse
 from rest_framework import status,views
 from rest_framework.response import Response
 from AgronetApp import serializers
-from AgronetApp.models import User
+from AgronetApp.models import user
 from AgronetApp.serializers import  userSerializer
 
 class userEditView(views.APIView):
 
-    def list(self, request, *args, **kwargs):
-        user = User.objects.all()
-        serializer=userSerializer(User,many=True)
-        return Response(serializer.data,status=status.HTTP_200_OK)
+    def get_object(self,id_product):
+        try:
+            return user.objects.get(pk=user)
+        except user.DoesNotExist:
+            raise Http404
 
-    def update(self, request,*args,**kwargs):
-        user=self.list(kwargs['username'])
+    def put(self, request,*args,**kwargs):
+        user=self.search(kwargs['usersname'])
         serializer=userSerializer(user,data=request.data)
         if serializer.is_valid():
             serializer.save()
