@@ -5,6 +5,11 @@ const routes = [{
   path: '/',
   name: 'root',
   component: App
+},
+               {
+  path: '/user/signUp',
+  name: "signUp",
+  component: SignUp
 }]
 
 const router = createRouter({
