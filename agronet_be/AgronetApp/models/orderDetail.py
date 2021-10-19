@@ -8,3 +8,5 @@ class OrderDetail(models.Model):
     total_price_product=models.IntegerField(null=False)
     amount_order=models.IntegerField(null=False)
     id_order_fk=models.ForeignKey(order,on_delete=models.DO_NOTHING)  
+    def __str__(self):
+     return self.id_order_fk

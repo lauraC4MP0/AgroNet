@@ -90,7 +90,7 @@ class Migration(migrations.Migration):
             name='City',
             fields=[
                 ('id_city', models.AutoField(primary_key=True, serialize=False)),
-                ('name_city', models.CharField(max_length=15, verbose_name='Ciudad')),
+                ('name_city', models.CharField(max_length=30, verbose_name='Ciudad')),
                 ('Departament', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='Departamento', to='AgronetApp.departament')),
             ],
         ),
