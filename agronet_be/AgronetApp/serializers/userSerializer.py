@@ -19,7 +19,6 @@ class UserSerializer(serializers.ModelSerializer):
                 "email" : user.email,
                 "address_user" : user.address_user,
                 "id_city" : user.id_city,
-                "id_department" : user.id_department,
                 "num_phone" : user.num_phone,
                 "Type_sex" : user.Type_sex,
                 "Type_rol" : user.Type_rol,
