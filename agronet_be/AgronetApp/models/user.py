@@ -30,10 +30,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     id_city = models.ForeignKey(City,related_name='ciudad',null=False,on_delete=models.CASCADE)
     num_phone = models.IntegerField('Telefono')
     password = models.CharField('Contraseña', max_length=256)
-    Type_sex = models.TextChoices('Femenino', 'Masculino')
-    Type_rol = models.TextChoices('Comprador','Vendedor')
-    sex_user = models.CharField(choices=Type_sex.choices, max_length=10)
-    rol_user = models.CharField(blank=False, choices=Type_rol.choices, max_length=15)
+    #Type_sex = [("Masculino","MASCULINO"),("Femenino","FEMENINO")]
+    #Type_rol = models.TextChoices(("Comprador","Comprador"),("Vendedor","Vendedor"))
+    sex_user = models.CharField('Sexo', max_length=10)
+    rol_user = models.CharField('Rol', max_length=15)
 
     def save(self, **kwargs):
         some_salt = 'jjHgkjashflkjGJHA'

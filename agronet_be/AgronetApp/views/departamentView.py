@@ -29,12 +29,12 @@ class DepartamentView(views.APIView):
          return Response(serializer.data,status=status.HTTP_200_OK)
 
 
- #   def post(self, request):
-     #   departamento = request.data.get('deparatamento')
-      #  serializer = departamentSerializer.DepartamentSerializer(data=departamento)
-       # if serializer.is_valid(raise_exception=True):
-        #    depart_saved = serializer.save()
-        #return Response(serializer.data,{"success": "Departamento '{}' creado correctamente".format(depart_saved)})
+    def post(self, request):
+        departamento = request.data.get('departamento')
+        serializer = departamentSerializer.DepartamentSerializer(data=departamento)
+        if serializer.is_valid(raise_exception=True):
+            depart_saved = serializer.save()
+        return Response({"success": "Departamento '{}' creado correctamente".format(depart_saved)})
 
 
  
