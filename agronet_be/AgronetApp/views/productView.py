@@ -3,10 +3,10 @@ from django.shortcuts import render, HttpResponse
 from rest_framework import status,views
 from rest_framework.response import Response
 from rest_framework.serializers import Serializer
-from agroApp import serializers
-from agroApp.models import Product
-from agroApp.serializers import ProductSerializer
-from agroApp.models.user import User
+from AgronetApp import serializers
+from AgronetApp.models import Product
+from AgronetApp.serializers import ProductSerializer
+from AgronetApp.models.user import User
 
 class ProductsView(views.APIView):
 

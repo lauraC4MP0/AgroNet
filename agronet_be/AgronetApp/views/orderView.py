@@ -3,10 +3,10 @@ from django.shortcuts import render, HttpResponse
 from rest_framework import status, views
 from rest_framework.response import Response
 from rest_framework.serializers import Serializer 
-from agroApp import serializers
-from agroApp.models.order import order
-from agroApp.serializers.orderSerilizer import orderSerializer
-from agroApp.models.user import User
+from AgronetApp import serializers
+from AgronetApp.models.order import order
+from AgronetApp.serializers import orderSerializer
+from AgronetApp.models.user import User
 
 class OrdersView(views.APIView):
     def get(self,request,*args,**kwargs):
