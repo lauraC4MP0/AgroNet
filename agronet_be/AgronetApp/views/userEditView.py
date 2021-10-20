@@ -8,9 +8,9 @@ from AgronetApp.serializers import  userSerializer
 
 class userEditView(views.APIView):
 
-    def get_object(self,id_product):
+    def get_object(self,usersname):
         try:
-            return user.objects.get(pk=user)
+            return user.objects.get(pk=usersname)
         except user.DoesNotExist:
             raise Http404
 
@@ -21,4 +21,3 @@ class userEditView(views.APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
-
