@@ -8,3 +8,6 @@ class order(models.Model):
     total_order=models.IntegerField()
     sales_unit=models.CharField(max_length=20)
     username=models.ForeignKey(User,related_name='username',null=False,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.username)

@@ -6,8 +6,8 @@ from rest_framework import serializers
 class OrderDetailSerializer(serializers.ModelSerializer):
    
     class Meta:
-        Model=OrderDetail
-        fields=['id_order_detail','id_product','total_price_product','amount_order','id_order']
+        model= OrderDetail
+        fields=['id_order_detail','id_product_fk','total_price_product','amount_order','id_order_fk']
         
                 
     
