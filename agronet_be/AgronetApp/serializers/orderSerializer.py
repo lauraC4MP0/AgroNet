@@ -4,7 +4,7 @@ from rest_framework import serializers
 class orderSerializer(serializers.ModelSerializer):
     class Meta:
         model = order
-        fields = ['date_sale', 'date_delivery', 'total_order','sales_unit','username']
+        fields = ['date_sale', 'date_delivery','username']
 
        # def create(self, validated_data):
         #    OrderInstance = order.objects.create(**validated_data)
