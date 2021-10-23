@@ -11,9 +11,9 @@ from AgronetApp.models.user import User
 from rest_framework import generics
 
 class OrdersView(generics.ListCreateAPIView):
-         queryset = Order.objects.all()              
-         serializer_class = OrderSerializer
+         queryset = order.objects.all()              
+         serializer_class = orderSerializer
          
 class OrdersDetail(generics.RetrieveUpdateDestroyAPIView):
-         queryset = Order.objects.all()              
-         serializer_class = OrderSerializer
+         queryset = order.objects.all()              
+         serializer_class = orderSerializer
