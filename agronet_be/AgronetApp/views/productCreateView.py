@@ -6,6 +6,6 @@ from rest_framework import generics
 
 from AgronetApp.serializers.productSerializer import ProductSerializer
 
-class ProductsView(generics.ListCreateAPIView):
-         queryset = Product.objects.all()              
-         serializer_class = ProductSerializer
+class ProductCreateView(generics.ListCreateAPIView):
+    queryset = Product.objects.all()              
+    serializer_class = ProductSerializer
