@@ -1,4 +1,5 @@
-from .productView import ProductsView
+from .productCreateView import ProductCreateView
+from .productDetailView import ProductDetailView
 from .orderDetailView import OrderDetailView
 from .orderView import OrdersView
 #from .orderView import specificOrderView
@@ -7,4 +8,3 @@ from .userDetailView import UserDetailView
 from .userEditView import userEditView
 from .cityView import CityViews
 from .departamentView import DepartamentView
-
