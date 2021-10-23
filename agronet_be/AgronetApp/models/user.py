@@ -22,11 +22,12 @@ class userManager(BaseUserManager):
         return user
 
 class User(AbstractBaseUser, PermissionsMixin):
-    usersname = models.IntegerField('Num Doc de Identidad', primary_key=True)
+    id=models.IntegerField('Número de documento de Identidad', primary_key=True)
+    usersname = models.IntegerField('Username', unique=True)
     name_user = models.CharField('Nombres', max_length=30)
     lastname_user = models.CharField('Apellidos', max_length=30)
     email = models.CharField('Correo electronico', max_length=100)
-    address_user = models.CharField('Direccion', max_length=50)
+    address_user = models.CharField('Dirección', max_length=50)
     id_city = models.ForeignKey(City,related_name='ciudad',null=False,on_delete=models.CASCADE)
     num_phone = models.IntegerField('Telefono')
     password = models.CharField('Contraseña', max_length=256)
