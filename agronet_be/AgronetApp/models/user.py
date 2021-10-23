@@ -22,8 +22,8 @@ class userManager(BaseUserManager):
         return user
 
 class User(AbstractBaseUser, PermissionsMixin):
-    id=models.IntegerField('Número de documento de Identidad', primary_key=True)
-    usersname = models.IntegerField('Username', unique=True)
+    id = models.IntegerField(primary_key=True)
+    usersname = models.CharField('Username', max_length=100)
     name_user = models.CharField('Nombres', max_length=30)
     lastname_user = models.CharField('Apellidos', max_length=30)
     email = models.CharField('Correo electronico', max_length=100)
@@ -42,6 +42,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         super().save(**kwargs)
 
     objects = UserManager()
-    USERNAME_FIELD = 'usersname'
+    USERNAME_FIELD = 'id'
     def __str__(self):
-        return str(self.usersname)
+        return str(self.id)
