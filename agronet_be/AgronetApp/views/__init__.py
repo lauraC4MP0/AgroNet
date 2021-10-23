@@ -2,7 +2,7 @@ from .productCreateView import ProductCreateView
 from .productDetailView import ProductDetailView
 from .orderDetailView import OrderDetailView
 from .orderView import OrdersView
-#from .orderView import specificOrderView
+from .orderView import OrdersDetail
 from .userCreateView import UserCreateView
 from .userDetailView import UserDetailView
 from .userEditView import userEditView
