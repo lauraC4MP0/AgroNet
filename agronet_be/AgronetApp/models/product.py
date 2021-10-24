@@ -8,12 +8,11 @@ class Product(models.Model):
     description_product=models.CharField(max_length=80, null=True)
     price_product=models.IntegerField(null=False)
     sales_unit_product=models.CharField(max_length=20,null=False)
-    username_fk=models.ForeignKey(User,on_delete=models.CASCADE)
-     #id_order_fk=models.ForeignKey(order,on_delete=models.DO_NOTHING)
     amount_product=models.IntegerField(null=False)
     image_product=models.BinaryField(null=True)
+    username_fk=models.ForeignKey(User,related_name='username2',null=False,on_delete=models.CASCADE)
     
     def __str__(self):
-        return str(self.username_fk)
+        return str(self.name_product)
      
      #self.email = email

@@ -1,9 +1,9 @@
-from AgronetApp.models.order import order
+from AgronetApp.models.order import Order
 from rest_framework import serializers
 
 class orderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = order
+        model = Order
         fields = ['date_sale', 'date_delivery','username']
 
        # def create(self, validated_data):

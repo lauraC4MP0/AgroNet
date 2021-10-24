@@ -4,16 +4,16 @@ from rest_framework import status, views
 from rest_framework.response import Response
 from rest_framework.serializers import Serializer 
 from AgronetApp import serializers
-from AgronetApp.models.order import order
+from AgronetApp.models.order import Order
 from AgronetApp.serializers import orderSerializer
 from AgronetApp.models.user import User
 
 from rest_framework import generics
 
 class OrdersView(generics.ListCreateAPIView):
-         queryset = order.objects.all()              
+         queryset = Order.objects.all()              
          serializer_class = orderSerializer
          
 class OrdersDetail(generics.RetrieveUpdateDestroyAPIView):
-         queryset = order.objects.all()              
+         queryset = Order.objects.all()              
          serializer_class = orderSerializer
