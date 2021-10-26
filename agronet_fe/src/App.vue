@@ -124,9 +124,9 @@ padding: 10px 20px;
 {
 
 color: #283747;
-background: #E5E7E9;
+background: #3298b7;
 
-border: 1px solid #E5E7E9;
+border: 1px solid #3298b7;
 
 }
 
@@ -134,7 +134,7 @@ border: 1px solid #E5E7E9;
 height: 75vh;
 margin: 0%;
 padding: 0%;
-background: #FDFEFE;
+background: #3298b7;
 
 }
 
@@ -145,7 +145,7 @@ padding:0;
 width: 100%;
 height: 10vh;
 min-height: 100px;
-background-color: #283747;
+background-color: #3298b7;
 color: #E5E7E9;
 }
 .footer h2{
