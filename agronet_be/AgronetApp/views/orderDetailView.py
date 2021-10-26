@@ -1,4 +1,3 @@
-import django_filters.rest_framework
 from django.conf import settings
 from django.db.models.query import QuerySet
 from rest_framework import views

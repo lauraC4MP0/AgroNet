@@ -1,6 +1,5 @@
 <template>
-    <div class="header">
-            <h1>AgroNet</h1>
+    <div id="newProduct" class="header">
             <nav>
                 <button v-if="is_auth" v-on:click="loadHome">Inicio</button>
                 <button v-if="is_auth" v-on:click="loadNewProduct">Nuevo Producto</button>
@@ -8,7 +7,7 @@
                 <button v-if="is_auth" v-on:click="loadEliminarProducto">Eliminar Producto</button>
                 <button v-if="is_auth" v-on:click="loadMisProductos">Mis Productos</button>
             </nav>
-        </div>
+    </div>
         <div class="main-component">
             <form v-on:submit.prevent="processNewProduct">
                 <h2>Agregar nuevo producto</h2>
@@ -47,59 +46,50 @@
                 <button type="submit">Crear producto</button>
             </form>
         </div>
-        <div class="footer">
-            <h2>Del campo a tu mesa</h2>
-        </div>
 </template>
 
 <script>
 import axios from 'axios';
-
-export default{
-    name:"NewProduct",
-    data:function(){
-        return{
-            product:{
-                name_product:"",
-                description_product:"",
-                price_product:"",
-                sales_unit_product:"",
-                amount_product:"",
-                image_product:"",
-                image_product:"",
-                usernmae_fk_id:"",
-            }
-        };
-    },
-    methods:{
-        processNewProduct:function(){
-            axios.post("https://ciclo3grupo2agroclicbd.herokuapp.com/products/", this.product,{
-                headers:{},
-            })
-            .then((result)=>{
-                let dataNewProduct={
-                    id_product:this.product.id_product,
-                    token_access:result.data.access,
-                    token_refresh:result.data.refresh,
-                };
-                this.$emit("CompletedNewProduct",dataNewProduct);
-            })
-            .catch((error)=>{
-                console.log(error)
-                alert("Ha ocurrido un error en el registro")
-            });
-        }
+export default {
+  name:"NewProduct",
+  data:function(){
+    return{
+      product:{
+        name_product:"",
+        description_product:"",
+        price_product:"",
+        sales_unit_product:"",
+        amount_product:"",
+        username_fk_id:""
+      }
     }
+  },
+  methods:{
+    processNewProduct:function(){
+      axios.post("https://ciclo3grupo2agroclicbd.herokuapp.com/product/",this.product,{headers:{}})
+      .then((result)=>{
+        let dataNewProduct={
+          name_product:this.user.name_product,
+          token_access:result.data.access,
+          token_refresh:result.data.refresh,
+        }
+        this.$emit('completedNewProduct',dataNewProduct)
+      })
+      .catch((error)=>{
+        console.log(error)
+        alert("Ha ocurrido un error en el registro");
+      });
+    }
+  }
 }
 </script>
 
 <style>
 body{
     margin: 0 0 0 0;
-    box-sizing: border-box;
+    
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
-
 form{
   width: 500px;
   padding: 16px;
@@ -108,14 +98,12 @@ form{
   background-color:mediumaquamarine;
   margin-top: 20px;
 }
-
 textarea{
+    width:400px;
     border-radius: 10px;
-    width: 450px;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;;
 }
-
 .amount{
     width: 450px;
     padding:16px;
@@ -130,22 +118,18 @@ textarea{
 .main-component label{
     font-size: 18px;
 }
-
 .amount h2{
     border-top: 0;
 }
-
 .amount select{
     align-items: center;
     align-content: center;
     align-self: center;
 }
-
 form h3{
   height: 0;
   padding: 0%;
 }
-
 form input[type="text"],form input[type="email"],form input[type="tel"], form input[type="password"],select, form input[type="number"]{
   width: 450px;
   padding:3px 10px;
@@ -156,7 +140,11 @@ form input[type="text"],form input[type="email"],form input[type="tel"], form in
   display: inline-block;
   font-size: 18px;
 }
-
+form input[type="radio"]{
+  font-style:italic;
+  font-size: 18px;
+  padding:0;
+}
 form .amount input[type="number"]{
     background-color: white;
     width: 40px;
@@ -166,7 +154,6 @@ form .amount input[type="number"]{
     align-content: center;
     align-items: center;
 }
-
 form button{
   width:100%;
   padding: 8px 16px;
@@ -177,11 +164,9 @@ form button{
   color:white;
   background-color: #000;
 }
-
 form button:hover{
   cursor:pointer;
 }
-
 textarea{
   width:100%;
   height: 100px;
@@ -191,63 +176,4 @@ textarea{
   display: block;
 }
 
-.header{
-  margin: 0%;
-  padding: 0;
-  width: 100%;
-  height:10vh;
-  min-height: 100px;
-  background-color:seagreen;
-  color:white;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header h1{
-  width: 20%;
-  text-align: center;
-}
-
-.header nav{
-  height: 100%;
-  width: 20%;
-  display:flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 20px;
-}
-
-.header nav button{
-  color:mediumaquamarine;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding:10px 20px;
-}
-
-.header nav button:hover{
-  color: seagreen;
-  background-color: white;
-  border: 1px solid white;
-  cursor: pointer;
-}
-
-.footer{
-  margin:0;
-  padding:0;
-  width:100%;
-  height: 10vh;
-  min-height: 100px;
-  background-color:seagreen;
-  color: white;
-}
-
-.footer h2{
-  width: 90%;
-  height: 100%;
-  display: flex;
-  justify-content:right;
-  align-items: center;
-}
 </style>

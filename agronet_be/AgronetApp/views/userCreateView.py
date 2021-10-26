@@ -3,14 +3,13 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.serializers import PasswordField, TokenObtainPairSerializer
 from AgronetApp.models.user import User
 from rest_framework import generics
-import django_filters.rest_framework
 
 from AgronetApp.serializers.userSerializer import UserSerializer
 
 class UserCreateView(generics.ListCreateAPIView):
          queryset = User.objects.all()              
          serializer_class = UserSerializer
-         filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
+         #filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
 
 #class UserCreateView(views.APIView):
 

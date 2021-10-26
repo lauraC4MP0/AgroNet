@@ -1,11 +1,4 @@
 <template>
-  <div class="header">
-    <h1>AgroNet</h1>
-    <nav>
-      <button v-if="!is_auth" v-on:click="loadLogIn">Iniciar sesión</button>
-      <button v-if="!is_auth" v-on:click="loadSignUp">Crear cuenta</button>
-    </nav>
-  </div>
   <div class="main-component">
     <form v-on:submit.prevent="processSignUp">
       <h3>Crear cuenta</h3>
@@ -52,14 +45,11 @@
       <button type="submit">Registrarse</button>
     </form>
   </div>
-  <div class="footer">
-    <h2>Del campo a tu mesa</h2>
-  </div>
+
 </template>
 
 <script>
 import axios from 'axios';
-
 export default {
   name: "SignUp",
   data: function () {
@@ -89,7 +79,7 @@ export default {
           let dataSignUp = {
             usersname: this.user.usersname,
             token_access: result.data.access,
-            token_refres: result.data.refresh,
+            token_refresh: result.data.refresh,
           };
           this.$emit("CompletedSignUp", dataSignUp);
         })
@@ -107,23 +97,20 @@ body{
     margin: 0 0 0 0;
     box-sizing: border-box;
   }
-
 form{
-  width: 300px;
+  width:400px;
   padding: 16px;
   border-radius: 10px;
   margin:auto;
   background-color:mediumaquamarine;
   margin-top: 20px;
 }
-
 form h3{
   height: 0;
   padding: 0%;
 }
-
 form input[type="text"],form input[type="email"],form input[type="tel"], form input[type="password"],select{
-  width: 250px;
+  width: 300px;
   padding:3px 10px;
   border:1px solid white;
   border-radius: 3px;
@@ -131,8 +118,8 @@ form input[type="text"],form input[type="email"],form input[type="tel"], form in
   margin:8px 0;
   display: inline-block;
 }
-
 form input[type="radio"]{
+    width: 200px;
   font-style:italic;
 }
 form button{
@@ -145,11 +132,9 @@ form button{
   color:white;
   background-color: #000;
 }
-
 form button:hover{
   cursor:pointer;
 }
-
 textarea{
   width:100%;
   height: 100px;
@@ -157,65 +142,5 @@ textarea{
   margin:8px 0;
   resize: none;
   display: block;
-}
-
-.header{
-  margin: 0%;
-  padding: 0;
-  width: 100%;
-  height:10vh;
-  min-height: 100px;
-  background-color:seagreen;
-  color:seashell;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header h1{
-  width: 20%;
-  text-align: center;
-}
-
-.header nav{
-  height: 100%;
-  width: 20%;
-  display:flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 20px;
-}
-
-.header nav button{
-  color:mediumaquamarine;
-  background-color: whitesmoke;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding:10px 20px;
-}
-
-.header nav button:hover{
-  color: seagreen;
-  background-color: #e5e7e9;
-  border: 1px solid #E5E7E9;
-  cursor: pointer;
-}
-
-.footer{
-  margin:0;
-  padding:0;
-  width:100%;
-  height: 10vh;
-  min-height: 100px;
-  background-color:seagreen;
-  color: #E5E7E9;
-}
-
-.footer h2{
-  width: 90%;
-  height: 100%;
-  display: flex;
-  justify-content:right;
-  align-items: center;
 }
 </style>

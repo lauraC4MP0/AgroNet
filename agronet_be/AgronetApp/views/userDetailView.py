@@ -3,14 +3,13 @@ from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework_simplejwt.backends import TokenBackend
 from rest_framework.permissions import IsAuthenticated
-import django_filters.rest_framework
 from AgronetApp.models.user import User
 from AgronetApp.serializers.userSerializer import UserSerializer
 
 class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()              
     serializer_class = UserSerializer
-    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
+    #filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
 #class UserDetailView(generics.RetrieveAPIView):
  #   queryset = User.objects.all()
   #  serializer_class = UserSerializer

@@ -24,9 +24,7 @@
     </div>
 
 
-    <div class="footer">
-      <h2>Agronet</h2>
-    </div>
+    
   </div>
 </template>
 
@@ -60,7 +58,7 @@ completedLogIn: function(data) {
  this.verifyAuth();
  },
 
-ompletedSignUp: function(data) {
+completedSignUp: function(data) {
  alert("Registro Exitoso");
  this.completedLogIn(data);
  },
@@ -81,8 +79,8 @@ padding: 0;
 width: 100%;
 height: 10vh;
 min-height: 100px;
-background-color: mediumaquamarine;
-color:#E5E7E9 ;
+background-color: rgba(99, 38, 53, 0.932);
+color:#fdfefe;
 display: flex;
 justify-content: space-between;
 
@@ -110,7 +108,7 @@ font-size: 20px;
 .header nav button{
 
 color: #E5E7E9;
-background: mediumaquamarine;
+background: #4a7a97;
 
 border: 1px solid #E5E7E9;
 
@@ -124,9 +122,9 @@ padding: 10px 20px;
 {
 
 color: #283747;
-background: #3298b7;
+background: #E5E7E9;
 
-border: 1px solid #3298b7;
+border: 1px solid #E5E7E9;
 
 }
 
@@ -134,25 +132,9 @@ border: 1px solid #3298b7;
 height: 75vh;
 margin: 0%;
 padding: 0%;
-background: #3298b7;
+background: #FDFEFE;
 
 }
 
-.footer{
-margin:0;
-padding:0;
 
-width: 100%;
-height: 10vh;
-min-height: 100px;
-background-color: #3298b7;
-color: #E5E7E9;
-}
-.footer h2{
-width: 100%;
-height: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-}
 </style>
