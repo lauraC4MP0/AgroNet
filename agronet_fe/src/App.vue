@@ -23,7 +23,7 @@
         </md-button>
       </nav>
     </div>
-
+    
     <div class="main-component">
       <router-view
         v-on:completedLogIn="completedLogIn"
