@@ -29,26 +29,32 @@
 </template>
 
 <script>
-export default {
-name: 'App',
-data: function(){
-return{
-is_auth: false
-}
-},
+  export default {
+    name: 'App',
+
+    data: function(){
+      return{
+        is_auth: false
+      }
+    },
 components: {
 },
 methods:{
 verifyAuth: function() {
-if(this.is_auth == false)
-this.$router.push({name: "logIn"})
+  if(this.is_auth == false){
+    this.$router.push({name: "logIn"})
+  }
 },
+
 loadLogIn: function(){
-this.$router.push({name: "logIn"})
+  this.$router.push({name: "logIn"})
 },
+
 loadSignUp: function(){
-this.$router.push({name: "signUp"})
+  console.log("test singup")
+  this.$router.push({name: "signUp"})
 },
+
 completedLogIn: function(data) {
  localStorage.setItem("isAuth", true);
  localStorage.setItem("username", data.username);
