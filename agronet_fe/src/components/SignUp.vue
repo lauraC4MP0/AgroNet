@@ -82,7 +82,7 @@
         </option>
       </select>
       <select v-model="user.sex_user">
-        <option>Sexo</option>
+        <option disbaled selected>Seleccione su sexo</option>
         <option value="Masculino">Masculino</option>
         <option value="Femenino">Femenino</option>
         <option>No binario</option>
