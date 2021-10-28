@@ -21,12 +21,15 @@
                 <br>
                 <label>Unidad de venta:</label>
                 <br>
-                <select class="unit">
+                <select class="unit" v-model="product.unit_Sales_product">
                     <option value="kilogramo">Kilogramo</option>
                     <option value="libra">Libra</option>
                     <option value="gramo">Gramo</option>
                     <option value="litro">Litro</option>
                     <option value="mililitro">Mililitro</option>
+                </select>
+                <select class="id" v-model="product.username_fk_id">
+                  <option disabled selected>Seleccione su id</option>
                 </select>
                 <div class="amount">
                     <h2>Cantidad</h2>
@@ -60,7 +63,8 @@ export default {
         price_product:"",
         sales_unit_product:"",
         amount_product:"",
-        username_fk_id:""
+        username_fk_id:"",
+        image_product:null,
       }
     }
   },
