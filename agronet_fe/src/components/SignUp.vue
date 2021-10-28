@@ -77,7 +77,9 @@
       <br />
       <select v-model="user.id_city">
         <option disabled selected>Selecciona tu ciudad</option>
-        <option v-for="city in cities" :key="city" :value="city">{{city.name_city}}</option>
+        <option v-for="city in cities" :key="city" :value="city.id_city">
+          {{ city.name_city }}
+        </option>
       </select>
       <select v-model="user.sex_user">
         <option>Sexo</option>
@@ -125,14 +127,14 @@ export default {
         sex_user: "",
         rol_user: "",
       },
-      pass1: document.getElementById('pass1'),
-      pass2: document.getElementById('pass2'),
-      e:document.getElementById("error"),
-      b:document.getElementById("login"),
+      pass1: document.getElementById("pass1"),
+      pass2: document.getElementById("pass2"),
+      e: document.getElementById("error"),
+      b: document.getElementById("login"),
       cities: [],
     };
   },
-  created: async function(){
+  created: async function () {
     this.getCities();
   },
   methods: {
@@ -143,7 +145,7 @@ export default {
         alert("Las contraseñas no coinciden, vuelve a intentar");
         validacion = false;
       } else {
-        document.getElementById("error").classList.remove("mostrar")
+        document.getElementById("error").classList.remove("mostrar");
         setTimeout(function () {
           location.reload();
         }, 3000);
