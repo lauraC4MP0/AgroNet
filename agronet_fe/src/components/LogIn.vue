@@ -24,7 +24,7 @@ export default {
     data: function(){
         return {
             user: {
-                username:"",
+                id:"",
                 password:""
             }
         }
@@ -65,11 +65,11 @@ export default {
         align-items: center;
     }
     .container_logIn_user {
-        border: 10px solid #283747;
+        border: 10px solid #0b5240;
         border-radius: 10px;
         width: 25%;
         height: 60%;
-        background-color:mediumaquamarine;
+        background-color:#4e9e7d;
  
         display: flex;
         flex-direction: column;
@@ -78,11 +78,11 @@ export default {
     }
   
     .logIn_user h2{
-        color: #283747;
+        color: #f2f6fa;
     }
   
     .logIn_user form{
-        width: 70%;
+        width: 100%;
  
     }
   
@@ -91,7 +91,7 @@ export default {
         width: 100%;
         box-sizing: border-box;
         padding: 10px 20px;
-        margin: 5px 0;
+        margin: 20px 0;
         border: 1px solid #283747;
     }
   
@@ -108,7 +108,7 @@ export default {
   
     .logIn_user button:hover{
         color: #0a0c0f;
-        background: crimson;
-        border: 1px solid #283747;
+        background: rgb(48, 90, 109);
+        border: 1px solid #609ee0;
     }
  </style>
