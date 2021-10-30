@@ -51,7 +51,7 @@
           disponibles.</label
         >
       </div>
-      <label>Adjuntar imagen (optional):</label>
+      <label>Adjuntar imagen (opcional):</label>
       <br />
       <br />
       <input type="file" name="image" accept="image/png, image/jpg" />
