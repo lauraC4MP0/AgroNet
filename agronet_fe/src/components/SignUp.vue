@@ -75,9 +75,23 @@
         required
       />
       <br />
+      <select id="departments" v-on:change="getCities">
+        <option disabled selected>Selecciona tu departamento</option>
+        <option
+          v-for="department in departments"
+          :key="department"
+          :value="department.id_departament"
+        >
+          {{ department.name_departament }}
+        </option>
+      </select>
       <select v-model="user.id_city">
         <option disabled selected>Selecciona tu ciudad</option>
-        <option v-for="city in cities" :key="city" :value="city.id_city">
+        <option
+          v-for="city in filteredCities "
+          :key="city"
+          :value="city.id_city"
+        >
           {{ city.name_city }}
         </option>
       </select>
@@ -131,11 +145,14 @@ export default {
       pass2: document.getElementById("pass2"),
       e: document.getElementById("error"),
       b: document.getElementById("login"),
+      departments: [],
+      department: document.getElementById("departments"),
       cities: [],
+      filteredCities: [],
     };
   },
   created: async function () {
-    this.getCities();
+    this.getDepartments();
   },
   methods: {
     processSignUp: function () {
@@ -174,17 +191,42 @@ export default {
           });
       }
     },
+    getDepartments: function () {
+      axios
+        .get("https://ciclo3grupo2agroclicbd.herokuapp.com/departament/")
+        .then((result) => {
+          this.departments = result.data;
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("No hay departamentos registrados");
+        });
+    } ,
     getCities: function () {
       axios
         .get("https://ciclo3grupo2agroclicbd.herokuapp.com/city/")
         .then((result) => {
           this.cities = result.data;
-          console.log(result.data);
+          this.getFilteredCities();
         })
         .catch((error) => {
           console.log(error);
           alert("No hay ciudades registradas");
         });
+    },
+    getFilteredCities: function () {
+      this.filteredCities=[];
+      var dep = document.getElementById("departments").value;
+      for(var i=0;i<this.cities.length;i++){
+        if(this.cities[i].Departament==dep){
+          this.filteredCities.push(this.cities[i]);
+        }
+      }/*
+      for (var city in this.cities) {;
+        if (city.Departament == dep) {
+          this.filteredCities.push(city);
+        }
+      }*/
     },
   },
 };
@@ -254,6 +296,10 @@ textarea {
   margin: 8px 0;
   resize: none;
   display: block;
+}
+
+.header nav {
+  width: 20%;
 }
 
 .ocultar {
