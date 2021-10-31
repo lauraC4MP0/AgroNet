@@ -126,7 +126,7 @@ export default {
   padding: 16px;
   border-radius: 10px;
   margin: auto;
-  background-color: mediumaquamarine;
+  background-color: #0b5240;
   margin-top: 20px;
 }
 .main-product textarea {
@@ -149,9 +149,15 @@ export default {
 }
 .main-product label {
   font-size: 18px;
+  color:black;
+}
+.main-product form h2{
+   border-top: 0;
+  color:black;
 }
 .amount h2 {
   border-top: 0;
+  color:antiquewhite;
 }
 .amount select {
   align-items: center;
@@ -161,6 +167,7 @@ export default {
 .main-product form h3 {
   height: 0;
   padding: 0%;
+  color:antiquewhite;
 }
 .main-product form input[type="text"],
 .main-product form input[type="email"],

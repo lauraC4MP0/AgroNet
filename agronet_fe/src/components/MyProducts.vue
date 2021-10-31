@@ -2,7 +2,7 @@
 <div class="main-component">
   <center><h2>Mis productos</h2><h3>Aquí puedes ver todos tus productos</h3></center>
   <ul class="list">
-    <li v-for="product in products" :key="product">Nombre: {{product.name_product}}<br>Descripción: {{product.description_product}}<br>Precio: ${{product.price_product}}<br>Unidad de venta: {{product.sales_unit_product}}<br>Cantidad: {{product.amount_product}}<br>usuario: {{product.username_fk}}
+    <li v-for="product in products" :key="product">Nombre: {{product.name_product}}<br>Descripción: {{product.description_product}}<br>Precio: ${{product.price_product}}<br>Unidad de venta: {{product.sales_unit_product}}<br>Cantidad: {{product.amount_product}}
     </li>
   </ul>
 </div>

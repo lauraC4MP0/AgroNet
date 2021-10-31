@@ -14,16 +14,22 @@
     <nav>
   <ul>
     <li>
-      <a v-if="is_auth"><router-link to="/productt"> Inicio</router-link></a>
+      <a v-if="is_auth"><router-link to="/home"> Inicio</router-link></a>
     </li>
     <li>
       <a v-if="is_auth"><router-link to="/user/edit"> Perfil</router-link></a>
     </li>
     <li>
-      <a v-if="is_auth"><router-link to="/product"> Productos</router-link></a>
+      <a v-if="is_auth"><router-link to="/product"> Mis Productos</router-link></a>
     </li>
+		<li><a v-if="is_auth"><router-link to="/product/new"> Nuevo Producto</router-link></a></li>
+						
+						
+						
+			
+    
     <li>
-      <a v-if="is_auth" v-on:click="logout"><router-link to="/product/newProduct"> Cerrar sesión</router-link></a>
+      <a v-if="is_auth" v-on:click="logout"> Cerrar sesión</a>
     </li>
   </ul>
 </nav>
@@ -108,7 +114,7 @@ margin: 0 0 0 0;
 padding: 9%;
 /*background-color: rgba(122, 197, 112, 0.932); */
 
-background-image: url("headerf.jpg");
+background: url("headerf.jpg");
 background-size:cover;
 color:#f6f8f8;
 justify-content: space-between;
@@ -135,7 +141,7 @@ border: 1px solid #E5E7E9;
 height: 75vh;
 margin: 0%;
 padding: 0%;
-/*background: #4b5757;*/
+background: url(https://elsolweb.tv/wp-content/uploads/2020/02/Cultivo-de-Fresa-Subachoque-2-scaled.jpg)
 }
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
