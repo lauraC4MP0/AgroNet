@@ -5,7 +5,7 @@
       Las contraseñas no coinciden, vuelve a intentar.
     </div>
   </center>
-  <div class="main-component">
+  <div class="main-signup">
     <form v-on:submit.prevent="processSignUp">
       <h3>Crear cuenta</h3>
       <br />
@@ -233,14 +233,9 @@ export default {
 </script>
 
 <style>
-body {
-  margin: 0 0 0 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
 
-form {
+
+.main-signup form {
   width: 400px;
   padding: 16px;
   border-radius: 10px;
@@ -250,15 +245,15 @@ form {
   font-size: 20px;
 }
 
-form h3 {
+.main-signup form h3 {
   height: 0;
   padding: 0%;
 }
 
-form input[type="text"],
-form input[type="email"],
-form input[type="tel"],
-form input[type="password"],
+.main-signup form input[type="text"],
+.main-signup form input[type="email"],
+.main-signup form input[type="tel"],
+.main-signup form input[type="password"],
 select {
   width: 350px;
   padding: 3px 10px;
@@ -270,11 +265,11 @@ select {
   font-size: 18px;
 }
 
-form input[type="radio"] {
+.main-signup form input[type="radio"] {
   font-style: italic;
 }
 
-form button {
+.main-signup form button {
   width: 100%;
   padding: 8px 16px;
   margin-top: 28px;
@@ -285,11 +280,11 @@ form button {
   background-color: #000;
 }
 
-form button:hover {
+.main-signup form button:hover {
   cursor: pointer;
 }
 
-textarea {
+.main-signup textarea {
   width: 100%;
   height: 100px;
   border: 1px solid white;
@@ -298,15 +293,15 @@ textarea {
   display: block;
 }
 
-.header nav {
+.main-signup .header nav {
   width: 20%;
 }
 
-.ocultar {
+.main-signup .ocultar {
   display: none;
 }
 
-.mostrar {
+.main-signup .mostrar {
   display: block;
 }
 

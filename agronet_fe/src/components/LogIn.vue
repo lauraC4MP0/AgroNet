@@ -5,7 +5,7 @@
         
             
         <div class="container_logIn_user">
-            <h2>Iniciar sesión</h2>
+            <h1>Iniciar sesión</h1>
  
             <form v-on:submit.prevent="processLogInUser" >
                 <input type="text" v-model="user.id" placeholder="Usuario">
@@ -55,61 +55,97 @@ export default {
 </script>
 
 <style>
+
+
     .logIn_user{
         margin: 0;
-        padding: 0%;
+        
         height: 100%;
         width: 100%;
- 
+        background: url(https://elsolweb.tv/wp-content/uploads/2020/02/Cultivo-de-Fresa-Subachoque-2-scaled.jpg) no-repeat center center fixed; 
         display: flex;
         justify-content: center;
         align-items: center;
     }
     .container_logIn_user {
-        border: 10px solid #0b5240;
-        border-radius: 10px;
-        width: 25%;
-        height: 60%;
-        background-color:#4e9e7d;
- 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+  
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 260px;
+  height: 260px;
+  border-radius: 5px;
+  background: rgba(3,3,3,0.25);
+  box-shadow: 1px 1px 50px #000;
+  display: inline-block;
     }
   
-    .logIn_user h2{
-        color: #f2f6fa;
-    }
+    .logIn_user h1{
+        font-family: 'Open Sans Condensed', sans-serif;
+  position: relative;
   
-    .logIn_user form{
-        width: 100%;
+  text-align: center;
+  font-size: 30px;
+  color: #ddd;
+  text-shadow: 3px 3px 10px #000;
+}
+    
+  
  
-    }
   
     .logIn_user input{
-        height: 40px;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 10px 20px;
-        margin: 20px 0;
-        border: 1px solid #283747;
+       font-family: 'Open Sans Condensed', sans-serif;
+  text-decoration: none;
+  position: relative;
+  width: 80%;
+  display: block;
+  margin: auto;
+  font-size: 17px;
+  color: rgb(2, 1, 1);
+  padding: 4px;
+  border-radius: 6px;
+
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  transition: all 0.2s ease-in-out;
     }
+  .logIn_user input:focus{
+  outline: none;
+  box-shadow: 3px 3px 10px #333;
+  background: #c4f8ffec;
+
+}
+
+
   
     .logIn_user button{
-        width: 100%;
-        height: 40px;
-        color: #E5E7E9;
-        background: #fbfdff;
-        border: 1px solid #E5E7E9;
-        border-radius: 5px;
-        padding: 10px 25px;
-        margin: 5px 0;
-    }
+ cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px;
+  margin: auto;
+    
+  background: rgba(3,3,3,.8);
+  color: #ffffff;
+background: #0b5240;
+   border: 1px solid #E5E7E9;
+    border-radius: 50px;
+    padding: 10px 20px;
+  overflow: hidden;
+  
+  box-shadow: 10px 10px 30px #000;
+  }
+
+    
   
     .logIn_user button:hover{
         color: #0a0c0f;
-        background: rgb(48, 90, 109);
-        border: 1px solid #609ee0;
+        background: rgb(24, 127, 175);
+        border: 1px solid #283747;
     }
- </style>
+    </style>

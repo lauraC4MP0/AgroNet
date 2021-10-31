@@ -1,5 +1,5 @@
 <template>
-  <div class="main-component">
+  <div class="main-product">
     <form v-on:submit.prevent="processNewProduct">
       <h2>Agregar nuevo producto</h2>
       <input
@@ -120,13 +120,8 @@ export default {
 </script>
 
 <style>
-body {
-  margin: 0 0 0 0;
 
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-form {
+.main-product form {
   width: 500px;
   padding: 16px;
   border-radius: 10px;
@@ -134,7 +129,7 @@ form {
   background-color: mediumaquamarine;
   margin-top: 20px;
 }
-textarea {
+.main-product textarea {
   width: 400px;
   border-radius: 10px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -152,7 +147,7 @@ textarea {
   align-content: center;
   border-top: 0;
 }
-.main-component label {
+.main-product label {
   font-size: 18px;
 }
 .amount h2 {
@@ -163,16 +158,16 @@ textarea {
   align-content: center;
   align-self: center;
 }
-form h3 {
+.main-product form h3 {
   height: 0;
   padding: 0%;
 }
-form input[type="text"],
-form input[type="email"],
-form input[type="tel"],
-form input[type="password"],
+.main-product form input[type="text"],
+.main-product form input[type="email"],
+.main-product form input[type="tel"],
+.main-product form input[type="password"],
 select,
-form input[type="number"] {
+.main-product form input[type="number"] {
   width: 450px;
   padding: 3px 10px;
   border: 1px solid white;
@@ -182,12 +177,12 @@ form input[type="number"] {
   display: inline-block;
   font-size: 18px;
 }
-form input[type="radio"] {
+.main-product form input[type="radio"] {
   font-style: italic;
   font-size: 18px;
   padding: 0;
 }
-form .amount input[type="number"] {
+.main-product form .amount input[type="number"] {
   background-color: white;
   width: 40px;
   height: 40px;
@@ -196,7 +191,7 @@ form .amount input[type="number"] {
   align-content: center;
   align-items: center;
 }
-form button {
+.main-product form button {
   width: 100%;
   padding: 8px 16px;
   margin-top: 28px;
@@ -206,11 +201,11 @@ form button {
   color: white;
   background-color: #000;
 }
-form button:hover {
+.main-product form button:hover {
   cursor: pointer;
 }
 
-textarea {
+.main-product textarea {
   width: 100%;
   height: 100px;
   border: 1px solid white;
