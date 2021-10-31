@@ -78,6 +78,7 @@ font-style: italic;
 
 .list li:hover{
   background: rgb(207, 233, 233);
+  border: 1px solid #000;
 }
 
 .list li:hover:before{
