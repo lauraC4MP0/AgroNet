@@ -1,5 +1,5 @@
 <template>
-  <div class="main-product">
+  <div class="main-component">
     <form v-on:submit.prevent="processNewProduct">
       <h2>Agregar nuevo producto</h2>
       <input
@@ -35,7 +35,7 @@
       </select>
       <select class="id" v-model="product.username_fk">
         <option disabled selected>Selecciona tu cédula</option>
-        <option v-for="user in users" :key="user" :value="users.id">
+        <option v-for="user in users" :key="user" :value="user.id">
           {{ user.id }}
         </option>
       </select>
@@ -43,7 +43,7 @@
         <h2>Cantidad</h2>
         <label>(en unidades de venta) que tienes disponibles para venta.</label>
         <center>
-          <input type="number" placeholder="1" min="1" required />
+          <input type="number" placeholder="1" min="1" required v-model="product.amount_product"/>
         </center>
         <br />
         <label
@@ -69,14 +69,14 @@ export default {
   data: function () {
     return {
       product: {
-        name_product: "",
-        description_product: "",
-        price_product: "",
-        sales_unit_product: "",
-        amount_product: "",
-        image_product: null,
-        username_fk: "",
-      },
+    name_product: "",
+    description_product: "",
+    price_product: null,
+    sales_unit_product: "",
+    username_fk: null,
+    amount_product: null,
+    image_product: null
+},
       users: [],
     };
   },
@@ -85,6 +85,7 @@ export default {
   },
   methods: {
     processNewProduct: function () {
+      console.log(this.product);
       axios
         .post(
           "https://ciclo3grupo2agroclicbd.herokuapp.com/product/",
@@ -103,12 +104,10 @@ export default {
         });
     },
     getUsers: function () {
-      console.log("getUsers");
       axios
         .get("https://ciclo3grupo2agroclicbd.herokuapp.com/user/")
         .then((result) => {
           this.users = result.data;
-          console.log(result.data);
         })
         .catch((error) => {
           console.log(error);
@@ -120,16 +119,21 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0 0 0 0;
 
-.main-product form {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+form {
   width: 500px;
   padding: 16px;
   border-radius: 10px;
   margin: auto;
-  background-color: #0b5240;
+  background-color: mediumaquamarine;
   margin-top: 20px;
 }
-.main-product textarea {
+textarea {
   width: 400px;
   border-radius: 10px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -147,34 +151,27 @@ export default {
   align-content: center;
   border-top: 0;
 }
-.main-product label {
+.main-component label {
   font-size: 18px;
-  color:black;
-}
-.main-product form h2{
-   border-top: 0;
-  color:black;
 }
 .amount h2 {
   border-top: 0;
-  color:antiquewhite;
 }
 .amount select {
   align-items: center;
   align-content: center;
   align-self: center;
 }
-.main-product form h3 {
+form h3 {
   height: 0;
   padding: 0%;
-  color:antiquewhite;
 }
-.main-product form input[type="text"],
-.main-product form input[type="email"],
-.main-product form input[type="tel"],
-.main-product form input[type="password"],
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="password"],
 select,
-.main-product form input[type="number"] {
+form input[type="number"] {
   width: 450px;
   padding: 3px 10px;
   border: 1px solid white;
@@ -184,12 +181,12 @@ select,
   display: inline-block;
   font-size: 18px;
 }
-.main-product form input[type="radio"] {
+form input[type="radio"] {
   font-style: italic;
   font-size: 18px;
   padding: 0;
 }
-.main-product form .amount input[type="number"] {
+form .amount input[type="number"] {
   background-color: white;
   width: 40px;
   height: 40px;
@@ -198,7 +195,7 @@ select,
   align-content: center;
   align-items: center;
 }
-.main-product form button {
+form button {
   width: 100%;
   padding: 8px 16px;
   margin-top: 28px;
@@ -208,11 +205,11 @@ select,
   color: white;
   background-color: #000;
 }
-.main-product form button:hover {
+form button:hover {
   cursor: pointer;
 }
 
-.main-product textarea {
+textarea {
   width: 100%;
   height: 100px;
   border: 1px solid white;
