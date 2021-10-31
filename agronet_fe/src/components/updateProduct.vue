@@ -4,10 +4,10 @@
       <p>
         Desde <b>AgroNet</b> te pedimos disculpas por las molestias presentadas,
         puedes dirigirte
-        <a href="https://ciclo3grupo2agroclicbd.herokuapp.com/user/"
+        <a href="https://ciclo3grupo2agroclicbd.herokuapp.com/product/"
           >a esta dirección</a
         >
-        para editar tu perfil. <br /><br />Estamos trabajando para resolver
+        para editar tus productos. <br /><br />Estamos trabajando para resolver
         el inconveniente.
       </p>
     </div>
